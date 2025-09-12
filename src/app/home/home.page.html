@@ -1,11 +1,46 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
+    <ion-title> Home </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button expand="block" shape="round" routerLink="/page1" color="primary">Next</ion-button>
+  <ion-button expand="block" shape="round" routerLink="/page1" color="primary"
+    >Next</ion-button
+  >
+
+  <ion-list>
+    <ion-item color="custom-blue" routerLink="/page1">
+      <ion-icon slot="start" name="navigate-circle-outline"></ion-icon>
+      <ion-label color="dark">
+        <h2>Navigation</h2>
+        <p>Navigate to page 1</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item color="custom-yellow" routerLink="/page2">
+      <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
+      <ion-label>
+        <h2>Navigation</h2>
+        <p>Navigate to page 2</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item color="custom-red" routerLink="/page3">
+      <ion-icon slot="start" name="compass-outline"></ion-icon>
+      <ion-label>
+        <h2>Navigation</h2>
+        <p>Navigate to page 3</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item color="custom-green" routerLink="/page4">
+      <ion-icon slot="start" name="map-outline"></ion-icon>
+      <ion-label>
+        <h2>Navigation</h2>
+        <p>Navigate to page 4</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
 </ion-content>
