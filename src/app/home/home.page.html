@@ -1,46 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Home </ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      Proyecto de Tesis
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button expand="block" shape="round" routerLink="/page1" color="primary"
-    >Next</ion-button
-  >
 
-  <ion-list>
-    <ion-item color="custom-blue" routerLink="/page1">
-      <ion-icon slot="start" name="navigate-circle-outline"></ion-icon>
-      <ion-label color="dark">
-        <h2>Navigation</h2>
-        <p>Navigate to page 1</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item color="custom-yellow" routerLink="/page2">
-      <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
-      <ion-label>
-        <h2>Navigation</h2>
-        <p>Navigate to page 2</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item color="custom-red" routerLink="/page3">
-      <ion-icon slot="start" name="compass-outline"></ion-icon>
-      <ion-label>
-        <h2>Navigation</h2>
-        <p>Navigate to page 3</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item color="custom-green" routerLink="/page4">
-      <ion-icon slot="start" name="map-outline"></ion-icon>
-      <ion-label>
-        <h2>Navigation</h2>
-        <p>Navigate to page 4</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content ion-text-center">
+      <h1>Detección de Fraude con IA</h1>
+      <p>Desarrollo de Aplicaciones para Ambientes Móviles</p>
+    </div>
+  </div>
   
+
+  <ion-card class="info-card">
+    <ion-card-header>
+      <ion-card-subtitle>Resumen del Proyecto</ion-card-subtitle>
+      <ion-card-title>Análisis y Propuesta</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="project-description">
+        Este proyecto se centra en la implementación de un <strong>modelo de aprendizaje automático en el backend para la detección de fraudes en sistemas de comercio electrónico.</strong> El objetivo es crear una solución robusta y escalable que pueda analizar transacciones en tiempo real para proteger tanto a los consumidores como a la empresa.
+      </p>
+
+      <div class="features-section">
+        <ion-chip color="primary" outline="true">
+          <ion-icon name="server-outline" class="ion-margin-end"></ion-icon>
+          <ion-label>Backend Robusto</ion-label>
+        </ion-chip>
+        <ion-chip color="secondary" outline="true">
+          <ion-icon name="analytics-outline" class="ion-margin-end"></ion-icon>
+          <ion-label>Machine Learning</ion-label>
+        </ion-chip>
+        <ion-chip color="tertiary" outline="true">
+          <ion-icon name="shield-checkmark-outline" class="ion-margin-end"></ion-icon>
+          <ion-label>Alta Seguridad</ion-label>
+        </ion-chip>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <div class="ion-padding">
+    <ion-button expand="block" shape="round" routerLink="/page1" color="primary">
+      Página 1
+      <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
+
 </ion-content>

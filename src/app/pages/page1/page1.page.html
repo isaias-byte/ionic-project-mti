@@ -3,46 +3,108 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Page 1</ion-title>
+    <ion-title> Calculadora </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-button expand="block" shape="round" routerLink="/page2" color="primary">Next</ion-button>
-  <ion-button expand="block" shape="round" routerLink="/home" color="tertiary">Back</ion-button>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card class="instructions-card">
+    <ion-card-header>
+      <ion-card-title>Instrucciones de Uso</ion-card-title>
+      <ion-button fill="clear" size="small" routerLink="/page2">
+        página2
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content>
+      <p>1. Ingresa hasta tres valores numéricos en los campos de abajo (si no se ingresa valor se tomará como 0).</p>
+      <p>2. Para operaciones básicas, se usarán los dos o tres números.</p>
+      <p>3. Para raíz cuadrada, solo se usará el 'Primer valor'.</p>
+      <p>
+        4. Para la exponencial, se usará 'Primer valor' elevado al 'Segundo
+        valor'.
+      </p>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-list>
-    <ion-item color="custom-blue" routerLink="/home">
-      <ion-icon slot="start" name="navigate-circle-outline"></ion-icon>
-      <ion-label color="dark">
-        <h2>Navigation</h2>
-        <p>Navigate to home</p>
-      </ion-label>
-    </ion-item>
+  <div class="result-display" *ngIf="result !== null">
+    <h2>Resultado: {{ result }}</h2>
+  </div>
 
-    <ion-item color="custom-yellow" routerLink="/page2">
-      <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
-      <ion-label>
-        <h2>Navigation</h2>
-        <p>Navigate to page 2</p>
-      </ion-label>
-    </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-input
+          label="Primer valor"
+          labelPlacement="floating"
+          fill="outline"
+          type="number"
+          [(ngModel)]="num1"
+          placeholder="Ingresa un número"
+        >
+        </ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-input
+          label="Segundo valor"
+          labelPlacement="floating"
+          fill="outline"
+          type="number"
+          [(ngModel)]="num2"
+          placeholder="Ingresa un número"
+        >
+        </ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-input
+          label="Tercer valor (opcional)"
+          labelPlacement="floating"
+          fill="outline"
+          type="number"
+          [(ngModel)]="num3"
+          placeholder="Para operaciones básicas"
+        >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    <ion-item color="custom-red" routerLink="/page3">
-      <ion-icon slot="start" name="compass-outline"></ion-icon>
-      <ion-label>
-        <h2>Navigation</h2>
-        <p>Navigate to page 3</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item color="custom-green" routerLink="/page4">
-      <ion-icon slot="start" name="map-outline"></ion-icon>
-      <ion-label>
-        <h2>Navigation</h2>
-        <p>Navigate to page 4</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        ><ion-button (click)="add()" expand="block">+</ion-button></ion-col
+      >
+      <ion-col
+        ><ion-button (click)="subtract()" expand="block">-</ion-button></ion-col
+      >
+      <ion-col
+        ><ion-button (click)="multiply()" expand="block">*</ion-button></ion-col
+      >
+      <ion-col
+        ><ion-button (click)="divide()" expand="block">/</ion-button></ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col
+        ><ion-button (click)="sqrt()" expand="block" color="secondary"
+          >√ (Raíz)</ion-button
+        ></ion-col
+      >
+      <ion-col
+        ><ion-button (click)="pow()" expand="block" color="secondary"
+          >xʸ (Exp)</ion-button
+        ></ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          (click)="clear()"
+          expand="block"
+          color="danger"
+          fill="outline"
+          >Limpiar</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
