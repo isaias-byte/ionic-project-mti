@@ -1,85 +1,67 @@
-/* Global page styles */
-ion-content {
-  // A subtle gradient background gives a professional feel
-  --background: linear-gradient(to bottom, #f0f2f5 0%, #ffffff 100%);
-}
-
-ion-toolbar {
-  --background: var(--ion-color-primary);
-  --color: var(--ion-color-primary-contrast);
-}
-
-/* Hero Section Styles */
-.hero-section {
-  position: relative;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop') no-repeat center center/cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  // Gradient overlay makes text readable on top of the image
-  background: linear-gradient(45deg, rgba(16, 56, 136, 0.7), rgba(88, 55, 141, 0.7));
-}
-
-.hero-content {
-  position: relative; // To ensure it's on top of the overlay
-  z-index: 1;
-  color: #ffffff;
-
-  h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin: 0;
-  }
-
-  p {
-    font-size: 1rem;
-    opacity: 0.9;
-  }
-}
-
-/* Info Card Styles */
-.info-card {
-  margin: -50px 16px 16px; // Negative margin pulls the card up into the hero
+.custom-card {
+  margin: 0 16px 16px;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --background: #ffffff;
 }
 
-.info-card ion-card-title {
+.custom-card ion-card-title {
   font-weight: bold;
 }
 
-.project-description {
-  font-size: 1rem;
-  line-height: 1.6;
+
+.custom-card ion-list ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --background: #ffffff;
+}
+
+.custom-card ion-list ion-label {
   color: #555;
-  margin-bottom: 20px;
+  font-weight: 500;
 }
 
-/* Features Section with Chips */
-.features-section {
+
+.tech-icon {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px; /* Adds space between chips */
-  margin-top: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
-ion-chip {
+.tech-icon ion-icon {
+  font-size: 3rem;
+}
+
+.tech-icon span {
+  font-size: 0.8rem;
   font-weight: 600;
+  color: #333;
 }
 
-/* Call to Action Button */
-ion-button {
-  --box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
-  font-weight: bold;
-  height: 48px;
+
+.process-flow {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.process-flow .step {
+  width: 80px;
+}
+
+.process-flow .step ion-icon {
+  font-size: 2.5rem;
+  color: var(--ion-color-primary);
+  margin-bottom: 5px;
+}
+
+.process-flow .step p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.3;
 }
