@@ -1,0 +1,73 @@
+ion-content {
+  /* MODIFICADO: Fondo principal oscuro */
+  --background: #121212;
+}
+
+.arch-card {
+  margin: 16px;
+  border-radius: 16px;
+  /* MODIFICADO: Sombra sutil y fondo de tarjeta oscuro */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --background: #1e1e1e;
+}
+
+.arch-card ion-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  ion-icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+
+  ion-card-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    /* MODIFICADO: Texto de título claro */
+    color: #e0e0e0;
+  }
+  
+  ion-card-subtitle {
+    font-weight: 500;
+    /* MODIFICADO: Texto de subtítulo más suave */
+    color: #b0b0b0;
+  }
+}
+
+.arch-card ion-card-content p {
+  /* MODIFICADO: Texto de párrafo claro */
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+.arch-card ion-list-header {
+  font-weight: 600;
+  /* MODIFICADO: Texto claro para la cabecera de la lista */
+  color: #e0e0e0;
+  --background: transparent;
+  padding-left: 0;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.arch-card ion-list ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --background: transparent;
+
+  h3 {
+    font-weight: 600;
+    /* MODIFICADO: Texto claro */
+    color: #e0e0e0;
+  }
+  p {
+    /* MODIFICADO: Texto claro y más suave */
+    color: #b0b0b0;
+    font-size: 0.9rem;
+  }
+  ion-icon {
+    margin-right: 12px;
+    font-size: 1.8rem;
+  }
+}

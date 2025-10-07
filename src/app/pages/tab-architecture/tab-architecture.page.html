@@ -1,0 +1,91 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Arquitectura del Proyecto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="arch-card">
+    <ion-card-header>
+      <ion-icon name="phone-portrait-outline" color="primary"></ion-icon>
+      <ion-card-title>Frontend (Aplicación Móvil)</ion-card-title>
+      <ion-card-subtitle>La cara visible del proyecto</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        La aplicación móvil es la principal interfaz para el usuario. Construida con tecnologías web modernas, ofrece una experiencia nativa y fluida.
+      </p>
+      <ion-list-header>Componentes Clave:</ion-list-header>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon name="logo-ionic" slot="start" color="secondary"></ion-icon>
+          <ion-label>
+            <h3>Ionic Framework</h3>
+            <p>UI para aplicaciones híbridas.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="logo-angular" slot="start" color="danger"></ion-icon>
+          <ion-label>
+            <h3>Angular</h3>
+            <p>Framework para la lógica y estado.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="arch-card">
+    <ion-card-header>
+      <ion-icon name="server-outline" color="primary"></ion-icon>
+      <ion-card-title>Backend (Servidor)</ion-card-title>
+      <ion-card-subtitle>El cerebro de las operaciones</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        El servidor procesa las transacciones, ejecuta el modelo de IA y se comunica de forma segura con la aplicación móvil y la base de datos.
+      </p>
+      <ion-list-header>Tecnologías Utilizadas:</ion-list-header>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon name="logo-python" slot="start" color="success"></ion-icon>
+          <ion-label>
+            <h3>Python con Flask/Django</h3>
+            <p>Para la API REST y la lógica de negocio.</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="analytics-outline" slot="start" color="tertiary"></ion-icon>
+          <ion-label>
+            <h3>Scikit-learn & TensorFlow</h3>
+            <p>Librerías para el modelo de Machine Learning.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="arch-card">
+    <ion-card-header>
+      <ion-icon name="layers-outline" color="primary"></ion-icon>
+      <ion-card-title>Base de Datos</ion-card-title>
+      <ion-card-subtitle>Almacenamiento de datos</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Se utiliza una base de datos NoSQL por su flexibilidad y escalabilidad, ideal para manejar grandes volúmenes de datos de transacciones.
+      </p>
+      <ion-list-header>Sistema Utilizado:</ion-list-header>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon name="leaf-outline" slot="start" color="success"></ion-icon>
+          <ion-label>
+            <h3>MongoDB</h3>
+            <p>Base de datos NoSQL orientada a documentos.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

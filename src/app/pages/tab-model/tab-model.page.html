@@ -1,0 +1,90 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Modelo de Detección IA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="model-card">
+    <ion-card-header>
+      <ion-icon name="analytics-outline" color="primary"></ion-icon>
+      <ion-card-title>Visión General del Modelo</ion-card-title>
+      <ion-card-subtitle>El núcleo de la detección</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        El modelo se basa en un algoritmo de **Random Forest**, seleccionado por su alta precisión, velocidad de entrenamiento y su capacidad para interpretar la importancia de cada variable en la detección de fraudes.
+      </p>
+      <ion-list-header>¿Por qué Random Forest?</ion-list-header>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon name="shield-checkmark-outline" slot="start" color="success"></ion-icon>
+          <ion-label>Resistente al sobreajuste (overfitting).</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="flash-outline" slot="start" color="warning"></ion-icon>
+          <ion-label>Eficiente con grandes volúmenes de datos.</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="model-card">
+    <ion-card-header>
+      <ion-icon name="git-network-outline" color="primary"></ion-icon>
+      <ion-card-title>Flujo de Datos (Pipeline)</ion-card-title>
+      <ion-card-subtitle>El viaje de la información</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Los datos de las transacciones pasan por un proceso de limpieza, normalización y extracción de características antes de ser evaluados por el modelo.
+      </p>
+      <div class="process-flow">
+        <div class="step">
+          <ion-icon name="file-tray-stacked-outline"></ion-icon>
+          <p>Recolección</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step">
+          <ion-icon name="funnel-outline"></ion-icon>
+          <p>Limpieza</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step">
+          <ion-icon name="key-outline"></ion-icon>
+          <p>Ingeniería de Característica</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="step">
+          <ion-icon name="checkmark-done-outline"></ion-icon>
+          <p>Predicción</p>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card class="model-card">
+    <ion-card-header>
+      <ion-icon name="bar-chart-outline" color="primary"></ion-icon>
+      <ion-card-title>Métricas Clave</ion-card-title>
+      <ion-card-subtitle>Midiendo el éxito del modelo</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>Precisión (Accuracy)</ion-label>
+          <ion-note slot="end" color="success">99.82%</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Sensibilidad (Recall)</ion-label>
+          <ion-note slot="end" color="warning">97.50%</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Puntuación F1</ion-label>
+          <ion-note slot="end" color="tertiary">98.25%</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
