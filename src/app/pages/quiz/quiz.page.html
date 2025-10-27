@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Quiz Final</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="!quizFinished">
+    <ion-card class="quiz-card" *ngIf="allQuestions.length > 0">
+      <ion-card-header>
+        <ion-card-subtitle>
+          Pregunta {{ currentQuestionIndex + 1 }} de {{ allQuestions.length }}
+        </ion-card-subtitle>
+        <ion-card-title class="question-text">
+          {{ allQuestions[currentQuestionIndex].question }}
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="none" class="options-list">
+          <ion-radio-group [(ngModel)]="selectedAnswer">
+            <ion-item *ngFor="let option of allQuestions[currentQuestionIndex].options">
+              <ion-label>{{ option }}</ion-label>
+              <ion-radio slot="start" [value]="option"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button 
+      class="ion-padding" 
+      expand="block" 
+      (click)="nextQuestion()" 
+      [disabled]="!selectedAnswer">
+      {{ currentQuestionIndex < allQuestions.length - 1 ? 'Siguiente' : 'Finalizar' }}
+    </ion-button>
+  </div>
+
+  <div *ngIf="quizFinished" class="results-container ion-text-center">
+    <ion-card class="quiz-card">
+      <ion-card-header>
+        <ion-card-title>¡Quiz Completado!</ion-card-title>
+        <ion-card-subtitle>Este es tu resultado:</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <h1 class="score-text">
+          {{ score }} / {{ allQuestions.length }}
+        </h1>
+        <p class="score-percentage">
+          {{ (score / allQuestions.length) * 100 | number:'1.0-0' }}% de aciertos
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button (click)="restartQuiz()" fill="solid" color="primary">
+      <ion-icon slot="start" name="refresh-outline"></ion-icon>
+      Intentar de Nuevo
+    </ion-button>
+    <ion-button (click)="goBack()" fill="outline" color="light">
+      <ion-icon slot="start" name="home-outline"></ion-icon>
+      Volver al Inicio
+    </ion-button>
+  </div>
+</ion-content>

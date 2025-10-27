@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./pages/quiz/quiz.module').then( m => m.QuizPageModule)
+  },
   // {
   //   path: 'page1',
   //   loadChildren: () => import('./pages/page1/page1.module').then( m => m.Page1PageModule)
